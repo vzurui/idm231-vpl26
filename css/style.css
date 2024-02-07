@@ -5,3 +5,28 @@ body {
 h1 {
     color: darkblue;
 }
+
+p {
+    font-size: 20px;
+}
+
+.birthday-select {
+    text-align: center;
+}
+
+.pokemon-select {
+    border: 3px solid red;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px 30px;
+    justify-content: center;
+    margin: 2em 3em;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
