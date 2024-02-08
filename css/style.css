@@ -1,27 +1,58 @@
 body {
-    background-color: lightcyan; 
+    background-image: url("images/background.png");
+    background-color: bisque;
 }
 
 h1 {
     color: darkblue;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 2em 0 -1em 0;
 }
 
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+}
 p {
     font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0.5em 0;
+    background-image: url('background.png');
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.bb-select button {
+    background-color: white;
+    border: 3px solid darkblue;
+    padding: 1em -6em;
+}
+
+button:hover {
+    background: cyan;
 }
 
 .birthday-select {
     text-align: center;
+    margin: 5em;
 }
 
-.pokemon-select {
-    border: 3px solid red;
+.bb-select {
+    align-items: center;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px 30px;
-    justify-content: center;
-    margin: 2em 3em;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px 40px;
+    justify-content: flex-start;
+    margin: -1em 15em 6em 15em;
+    text-align: center;
 }
+
+img { 
+    max-width: 50%; 
+    max-height: 30%; }
 
 .hidden {
     display: none;
