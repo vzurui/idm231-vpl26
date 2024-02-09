@@ -2,12 +2,26 @@ body {
     background-color: bisque;
 }
 
-h1 {
+/* h1 {
     color: darkblue;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
-    margin: 2em 0 -1em 0;
-}
+    margin: 2em 0 -1em 0; */
+    h1 {
+        animation: moveright 3s ease-in-out 2s infinite alternate;
+      }
+      
+      @keyframes moveright {
+        from {
+          color: blue;
+          margin-left: 20%;
+        }
+        to {
+          color: red;
+          margin-left: 60%;
+        }
+      }
+
 
 h3 {
     font-family: 'Courier New', Courier, monospace;
@@ -51,7 +65,9 @@ button:hover {
 
 img { 
     max-width: 50%; 
-    max-height: 30%; }
+    max-height: 30%; 
+    overflow: hidden;
+}
 
 .hidden {
     display: none;
