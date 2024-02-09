@@ -1,14 +1,33 @@
+@font-face {
+    font-family: "Bobs_Burgers";
+    src: url('../fonts/bobs_burgers_font/bobs_burgers_kit/bobs_burgers-webfont.woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: bisque;
 }
 
+h1 {
+    text-align: center;
+    margin: 0.5em 0;
+    font-family: "Bobs_Burgers", Arial, Helvetica, sans-serif;
+    font-size: 70px;
+    letter-spacing: 3px;
+}
+
 /* h1 {
     color: darkblue;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'bobs_burgers' , 'Courier New', Courier, monospace;
     text-align: center;
     margin: 2em 0 -1em 0; */
-    h1 {
+    /* h1 {
         animation: moveright 3s ease-in-out 2s infinite alternate;
+        margin: 1em 0 -1em 0;
+        font-family: Arial, Helvetica, sans-serif;
       }
       
       @keyframes moveright {
@@ -20,22 +39,43 @@ body {
           color: red;
           margin-left: 60%;
         }
-      }
+      } */
 
+
+/* h3 {
+    font-family: Arial, Helvetica, sans-serif;
+} */
 
 h3 {
-    font-family: 'Courier New', Courier, monospace;
-}
+    animation: moveright 3s ease-in-out 2s infinite alternate;
+    margin: 1em;
+    font-family: "Bobs_Burgers", Helvetica, sans-serif;
+    font-size: 50px;
+  }
+  
+  @keyframes moveright {
+    from {
+      color: blue;
+      margin-left: 20%;
+    }
+    to {
+      color: red;
+      margin-left: 60%;
+    }
+  }
+
 p {
     font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0.5em 0;
     background-image: url('background.png');
 
 }
 
-* {
-    box-sizing: border-box;
+img { 
+    max-width: 50%; 
+    max-height: 30%; 
+    overflow: hidden;
 }
 
 .bb-select button {
@@ -44,8 +84,14 @@ p {
     padding: 1em -6em;
 }
 
+
+.bb-select p {
+    letter-spacing: 1px;
+}
+
 button:hover {
-    background: cyan;
+    scale: 110%;
+    opacity: 90%;
 }
 
 .birthday-select {
@@ -63,10 +109,11 @@ button:hover {
     text-align: center;
 }
 
-img { 
-    max-width: 50%; 
-    max-height: 30%; 
-    overflow: hidden;
+.title-box {
+    background-color: yellow;
+    border: 10px solid red;
+    padding: 2px;
+    margin: 3em 15em;
 }
 
 .hidden {
