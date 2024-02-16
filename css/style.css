@@ -116,6 +116,14 @@ button:hover {
     margin: 3em 15em;
 }
 
+.help-button {
+    display: flex;
+    justify-content: flex-start;
+    width: 15%;
+    height: auto;
+
+}
+
 .hidden {
     display: none;
 }
