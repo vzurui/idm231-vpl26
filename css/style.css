@@ -7,16 +7,28 @@
     box-sizing: border-box;
 }
 
+root {
+    --font-text: "Bobs_Burgers", Arial, Helvetica, sans-serif;
+}
+
 body {
-    background-color: bisque;
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 h1 {
+    color: red;
     text-align: center;
-    margin: 0.5em 0;
+    margin: 0.5em 0 -2em 0;
     font-family: "Bobs_Burgers", Arial, Helvetica, sans-serif;
     font-size: 70px;
     letter-spacing: 3px;
+
+    -webkit-text-stroke: 1px black;
 }
 
 /* h1 {
@@ -42,34 +54,24 @@ h1 {
       } */
 
 
-/* h3 {
-    font-family: Arial, Helvetica, sans-serif;
-} */
-
-h3 {
-    animation: moveright 3s ease-in-out 2s infinite alternate;
-    margin: 1em;
-    font-family: "Bobs_Burgers", Helvetica, sans-serif;
-    font-size: 50px;
-  }
-  
-  @keyframes moveright {
-    from {
-      color: blue;
-      margin-left: 20%;
-    }
-    to {
-      color: red;
-      margin-left: 60%;
-    }
-  }
+ h3 {
+    font-family: "Bobs_Burgers", Arial, Helvetica, sans-serif;
+    font-size: 200%;;
+}
 
 p {
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-family: "Bobs_Burgers", Arial, Helvetica, sans-serif;
     margin: 0.5em 0;
-    background-image: url('background.png');
+}
 
+button {
+    padding: 10px;
+}
+
+button:hover {
+    scale: 110%;
+    opacity: 90%;
 }
 
 img { 
@@ -89,11 +91,6 @@ img {
     letter-spacing: 1px;
 }
 
-button:hover {
-    scale: 110%;
-    opacity: 90%;
-}
-
 .birthday-select {
     text-align: center;
     margin: 5em;
@@ -102,10 +99,10 @@ button:hover {
 .bb-select {
     align-items: center;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px 40px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px 20px;
     justify-content: flex-start;
-    margin: -1em 15em 6em 15em;
+    margin: -1em 15em 2em 15em;
     text-align: center;
 }
 
@@ -117,11 +114,32 @@ button:hover {
 }
 
 .help-button {
-    display: flex;
-    justify-content: flex-start;
-    width: 15%;
+    width: 13%;
     height: auto;
+}
 
+.need-help {
+    display: flex;
+    justify-content: right;
+}
+
+.help-text {
+    font-size: 130%;
+    text-align: right;
+    margin: -7em 1em 0 0;
+} 
+
+#submit-button {
+    background-color: white;
+    padding: 10px;
+}
+
+#birthday-pick {
+    background-color: yellow;
+    color: red;
+    font-family: "Bobs_Burgers", Helvetica, sans-serif;
+    font-size: 25px;
+    padding: 20px;
 }
 
 .hidden {
