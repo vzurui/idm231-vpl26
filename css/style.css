@@ -19,35 +19,36 @@ body {
     background-image: url('../images/background.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center; 
 }
 
 h1 {
     color: black;
     text-align: center;
     margin: 0.5em 0 -2em 0;
+    padding: 70px;
     font-family: var(--font-text);
     font-size: 70px;
     letter-spacing: 3px;
 
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .1px var(--red);
 }
 
 
  h3 {
     font-family: var(--font-text);
     font-size: 200%;
-    margin: 1em 0 0 0;
+    margin: 0;
 }
 
 p {
     font-size: 30px;
     font-family: var(--font-text);
-    margin: 0.5em 0;
 }
 
 button {
-    padding: 10px;
+    font-family: var(--font-text);
+    padding: 40px;
 }
 
 button:hover {
@@ -73,9 +74,10 @@ img {
 }
 
 .birthday-select {
-    background-color: white;
+    background-color: antiquewhite;
     text-align: center;
-    margin: 9em;
+    margin: 5em 15em;
+    padding: 30px 20px;
 }
 
 .bb-select {
@@ -86,13 +88,6 @@ img {
     justify-content: flex-start;
     margin: -1em 15em 2em 15em;
     text-align: center;
-}
-
-.title-box {
-text-align: center;
-background-color: var(--red);
-margin: 10em;
-padding: 80px;
 }
 
 .help-button {
@@ -106,9 +101,13 @@ padding: 80px;
 }
 
 .help-text {
+    background-color: antiquewhite;
     font-size: 130%;
-    text-align: right;
-    margin: -7em 1em 0 0;
+    text-align: center;
+    border-radius: 10px;
+    height: 50px;
+    width: 135px;
+    margin-left: 62em;
 } 
 
 #submit-button {
