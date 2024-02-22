@@ -74,9 +74,9 @@ img {
 }
 
 .birthday-select {
-    background-color: antiquewhite;
+    background-color: #dd9f6f;
     text-align: center;
-    margin: 5em 15em;
+    margin: 5em 20em;
     padding: 30px 20px;
 }
 
@@ -94,6 +94,8 @@ img {
     width: 13%;
     height: auto;
 }
+
+
 
 .need-help {
     display: flex;
