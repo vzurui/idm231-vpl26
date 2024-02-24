@@ -151,6 +151,14 @@ const bb_signs = [
   },
 ];
 
+bb_signs.forEach(button);
+{
+  const buttonElement = document.getElementById(button.id);
+  buttonElement.addEventListener("click", () => {
+    alert(button.description);
+  });
+}
+
 function close_zodiac() {
   console.log("bye bye!");
 }
