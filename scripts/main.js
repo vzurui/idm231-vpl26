@@ -64,22 +64,13 @@
 //   image: "gene.jpg",
 // };
 
-function showForm() {
-  document
-    .getElementById("birthday-pick")
-    .setAttribute("class", "birthday-pick");
-}
-
-const bday = document.getElementById("birthday-pick");
-const date = new Date(bday.value);
-const submitButton = document.getElementById("submit-button");
-
-submitButton.addEventListener("click", getSign(), false);
+/* button data */
 
 const bb_signs_data = [
   {
     id: "mr-frond",
     name: "Mr. Frond",
+    sound: "Boing.mp3",
     image: "mr_frond.jpg",
     description:
       "Capricorns, born between December 22 and January 19, are known for their ambition, discipline, and practicality. Mr. Frond from Bob's Burgers exhibits traits associated with Capricorns, such as dedication to his job, a hardworking nature, and a practical approach to problem-solving. His no-nonsense attitude and occasional struggle with expressing emotions align with the reserved and disciplined nature often attributed to Capricorns.",
@@ -170,10 +161,15 @@ frondButton.addEventListener("click", () => {
   element = document.querySelector(".birthday-select");
   element.style.display = "none";
   test.innerHTML = "HI";
+  element = document.querySelector("hidden");
+  element.style.display = "block";
 });
 
+/* clears zodiac from screen */
+
 function close_zodiac() {
-  console.log("bye bye!");
+  element = document.querySelector(".birthday-select");
+  element.style.display = "none";
 }
 
 function getSign(month, day, year) {
