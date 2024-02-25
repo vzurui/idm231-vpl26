@@ -163,6 +163,15 @@ const bb_signs_data = [
   },
 ];
 
+const frondButton = document.getElementById("mr-frond-button");
+const test = document.getElementById("test");
+
+frondButton.addEventListener("click", () => {
+  element = document.querySelector(".birthday-select");
+  element.style.display = "none";
+  test.innerHTML = "HI";
+});
+
 function close_zodiac() {
   console.log("bye bye!");
 }
