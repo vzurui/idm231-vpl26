@@ -91,15 +91,16 @@ img {
 }
 
 .display-bb p {
-    font-size: 100px;
+    background-color: white;
+    font-size: 30px;
     text-align: center;
+    margin: 4em 5em;
 }
 
 .help-button {
     width: 13%;
     height: auto;
 }
-
 
 .need-help {
     display: flex;

@@ -168,10 +168,10 @@ function addClickListenerToButtons() {
   });
 }
 
-function closeBBdialog() {
-  const dialog = document.getElementById("vy");
-  dialog.close(); // Look at documentation
-}
+// function closeBBdialog() {
+//   const dialog = document.getElementById("vy");
+//   dialog.close(); // Look at documentation
+// }
 
 function getCharacterDescription(event) {
   const characterId = event.target.id || event.target.parentElement.id;
