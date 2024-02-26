@@ -154,16 +154,38 @@ const bb_signs_data = [
   },
 ];
 
-const frondButton = document.getElementById("mr-frond-button");
 const test = document.getElementById("test");
 
-frondButton.addEventListener("click", () => {
+function addClickListenerToButtons() {
+  // bb_signs_data.forEach(({ id }) => { return id // character.id } ))
+  bb_signs_data.forEach((character) => {
+    const id = character.id;
+    const characterButton = document.getElementById(id);
+
+    characterButton.addEventListener("click", (event) => {
+      getCharacterDescription(event);
+    });
+  });
+}
+
+function closeBBdialog() {
+  const dialog = document.getElementById("vy");
+  dialog.close(); // Look at documentation
+}
+
+function getCharacterDescription(event) {
+  const characterId = event.target.id || event.target.parentElement.id;
+  const findCharacterInObject = bb_signs_data.filter((bb_character) => {
+    return bb_character.id === characterId;
+  });
+
+  const description = findCharacterInObject[0].description;
   element = document.querySelector(".birthday-select");
   element.style.display = "none";
-  test.innerHTML = "HI";
-  element = document.querySelector("hidden");
-  element.style.display = "block";
-});
+  test.innerHTML = description;
+}
+
+addClickListenerToButtons(); // THIS IS IMPORTANT IT GETS CALLED on HTML load
 
 /* clears zodiac from screen */
 
