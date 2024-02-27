@@ -187,6 +187,18 @@ function getCharacterDescription(event) {
 
 addClickListenerToButtons(); // THIS IS IMPORTANT IT GETS CALLED on HTML load
 
+const dialog = document.querySelector(".dialog");
+const showButton = document.getElementById("burger-button");
+const closeButton = document.querySelector(".close");
+
+showButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+closeButton.addEventListener("click", () => {
+  dialog.close();
+});
+
 /* clears zodiac from screen */
 
 function close_zodiac() {
