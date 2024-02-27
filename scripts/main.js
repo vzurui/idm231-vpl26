@@ -187,6 +187,8 @@ function getCharacterDescription(event) {
 
 addClickListenerToButtons(); // THIS IS IMPORTANT IT GETS CALLED on HTML load
 
+/* help button */
+
 const dialog = document.querySelector(".dialog");
 const showButton = document.getElementById("burger-button");
 const closeButton = document.querySelector(".close");
