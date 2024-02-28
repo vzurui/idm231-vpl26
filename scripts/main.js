@@ -156,7 +156,7 @@ const bb_signs_data = [
 
 const test = document.getElementById("test");
 
-function addClickListenerToButtons() {
+function selectChar() {
   // bb_signs_data.forEach(({ id }) => { return id // character.id } ))
   bb_signs_data.forEach((character) => {
     const id = character.id;
@@ -185,7 +185,7 @@ function getCharacterDescription(event) {
   test.innerHTML = description;
 }
 
-addClickListenerToButtons(); // THIS IS IMPORTANT IT GETS CALLED on HTML load
+selectChar(); // THIS IS IMPORTANT IT GETS CALLED on HTML load
 
 /* help button */
 

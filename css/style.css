@@ -36,8 +36,6 @@ h1 {
     font-family: var(--font-title);
     font-size: 70px;
     letter-spacing: 3px;
-
-    -webkit-text-stroke: .1px var(--red);
 }
 
 
@@ -45,13 +43,23 @@ h1 {
     letter-spacing: 2px;
     font-family: var(--font-text);
     font-size: 150%;
-    margin: 0;
+    margin: 0.5em 0;
 }
 
 p {
     font-size: 30px;
     font-family: var(--font-text);
 }
+    /* animation: backgroundChange 10s infinite alternate;
+}
+
+@keyframes backgroundChange {
+    0%   { background-color: #f0262a; } 
+    25%  { background-color: #f172a9; } 
+    50%  { background-color: #95d244; }
+    75%  {background-color: #9ac7e8;}
+    100% { background-color: #fcdd60; } 
+  } */
 
 button {
     font-family: var(--font-text);
@@ -68,6 +76,11 @@ img {
     overflow: hidden;
 }
 
+dialog { 
+    background-color: whitesmoke;
+    border: 4px solid black;
+}
+
 .bb-select button {
     background-color: var(--yellow);    
     border: 4px solid var(--red);
@@ -81,10 +94,10 @@ img {
 }
 
 .birthday-select {
-    border: 3px solid #a52d24;
-    background-color: antiquewhite;
+    border: 5px solid var(--red);
+    background-color: whitesmoke;
     text-align: center;
-    margin: 5em 20em;
+    margin: 5em 25em;
     padding: 30px 20px;
 }
 
@@ -120,6 +133,12 @@ img {
     margin: 0 1em;
 }
 
+button.close {
+    border: 3px solid var(--red);
+    background-color: var(--yellow);
+    padding: 15px;
+}
+
 #burger-button {
     font-size: 110%;
     height: 30%;
@@ -130,13 +149,16 @@ img {
 }
 
 #submit-button {
-    background-color: white;
-    padding: 10px;
+    background-color: var(--yellow);
+    border: 3px solid var(--red);
+    padding: 13px;
+    margin-left: 0.5em;
 }
 
 #birthday-pick {
-    font-family: var(--font-title);
-    font-size: 25px;
+    border: 3px solid var(--red);
+    font-family: var(--font-text);
+    font-size: 20px;
     padding: 10px;
 }
 
