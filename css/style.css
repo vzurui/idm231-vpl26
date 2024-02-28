@@ -50,16 +50,6 @@ p {
     font-size: 30px;
     font-family: var(--font-text);
 }
-    /* animation: backgroundChange 10s infinite alternate;
-}
-
-@keyframes backgroundChange {
-    0%   { background-color: #f0262a; } 
-    25%  { background-color: #f172a9; } 
-    50%  { background-color: #95d244; }
-    75%  {background-color: #9ac7e8;}
-    100% { background-color: #fcdd60; } 
-  } */
 
 button {
     font-family: var(--font-text);
@@ -114,7 +104,6 @@ dialog {
 .display-bb p {
     background-color: var(--yellow);
     border-color: var(--red);
-    border-width: 30%;
     font-size: 22px;
     text-align: center;
     margin: 5em 10em;
