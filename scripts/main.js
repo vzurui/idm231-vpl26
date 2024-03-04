@@ -99,7 +99,7 @@ const bb_signs_data = [
   },
 ];
 
-/* select character and description pops up */
+/* select character, description & sound play/pop up */
 
 const test = document.getElementById("test");
 
@@ -178,40 +178,44 @@ function close_zodiac() {
 function getSign() {
   let month;
   let day;
+  let astrological_sign;
 
   const getBirthdayDate = document.getElementById("birthday-pick");
   const getBirthdaySubmitButton = document.getElementById("submit-button");
+
   getBirthdaySubmitButton.addEventListener("click", () => {
     const birthdayDate = new Date(getBirthdayDate.value);
-    console.log(birthdayDate);
-  });
+    const getMonth = birthdayDate.getUTCMonth() + 1;
+    const getDay = birthdayDate.getUTCDate();
 
-  if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
-    astrological_sign = "mr-frond";
-    console.log("frond");
-  } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
-    astrological_sign = "gene";
-  } else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
-    astrological_sign = "kuchi-kopi";
-  } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
-    astrological_sign = "tina";
-  } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
-    astrological_sign = "jimmy-jr";
-  } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
-    astrological_sign = "tammy";
-  } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
-    astrological_sign = "rudy";
-  } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
-    astrological_sign = "linda";
-  } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
-    astrological_sign = "bob";
-  } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
-    astrological_sign = "louise";
-  } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
-    astrological_sign = "teddy";
-  } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
-    astrological_sign = "gayle";
-  }
+    if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
+      astrological_sign = "mr-frond";
+    } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
+      astrological_sign = "gene";
+    } else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
+      astrological_sign = "kuchi-kopi";
+    } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
+      astrological_sign = "tina";
+    } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+      astrological_sign = "jimmy-jr";
+    } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+      astrological_sign = "tammy";
+    } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
+      astrological_sign = "rudy";
+    } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
+      astrological_sign = "linda";
+    } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+      astrological_sign = "bob";
+    } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+      astrological_sign = "louise";
+    } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
+      astrological_sign = "teddy";
+    } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
+      astrological_sign = "gayle";
+    }
+    console.log(getMonth, getDay, birthdayDate, astrological_sign);
+    return astrological_sign;
+  });
 }
 
 getSign();
