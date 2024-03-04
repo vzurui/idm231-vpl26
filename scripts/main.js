@@ -133,7 +133,7 @@ function playCharacterAudio(characterId) {
   audioElement.play();
 }
 
-/* the function above uses a loop based off the function below */
+/* grabs character description */
 
 function getCharacterDescription(characterId) {
   const character = getCharacter(characterId);
@@ -170,10 +170,10 @@ closeButton.addEventListener("click", () => {
 
 /* clears zodiac from screen */
 
-function close_zodiac() {
-  element = document.querySelector(".birthday-select");
-  element.style.display = "none";
-}
+// function close_zodiac() {
+//   element = document.querySelector(".birthday-select");
+//   element.style.display = "none";
+// }
 
 function getSign() {
   let astrological_sign;
