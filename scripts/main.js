@@ -109,48 +109,47 @@ function selectChar() {
     const id = character.id;
     const characterButton = document.getElementById(id);
 
+    // click event, but MANY things will happen here
     characterButton.addEventListener("click", (event) => {
-      getCharacterDescription(event);
+      const characterId = event.target.id || event.target.parentElement.id;
+      getCharacterDescription(characterId);
+      playCharacterAudio(characterId);
+      //getCharacterImg(characterId);
+      // the last thing open the dialog;
+      // const dialog = document.getElementById("display-bb");
+      // dialog.showModal();
     });
   });
 }
 
 /* audio sounds */
 
-// function playAudio(event) {
-// bb_signs_data.forEach((audio)) => {
-//   const audioId = character.sound;
-//   const characterButton = document.getElementById(audio);
+function playCharacterAudio(characterId) {
+  const character = getCharacter(characterId);
 
-// characterButton.addEventListener("click", (event) => {
-
-// })
-// }
-// }
-
-// function playCharAudio(event) {
-//   const charAudio = event.target.sound;
-//   const findAudio = bb_signs_data.filter((bb_audio) => {
-//     return bb_audio.sound === audioId;
-//   });
-
-//   const sound = findAudio[0].description;
-// }
-
-// playCharAudio();
+  const sound = character.sound;
+  const audioElement = document.getElementById("audio_player");
+  audioElement.setAttribute("src", `sounds/${sound}`);
+  audioElement.play();
+}
 
 /* the function above uses a loop based off the function below */
 
-function getCharacterDescription(event) {
-  const characterId = event.target.id || event.target.parentElement.id;
+function getCharacterDescription(characterId) {
+  const character = getCharacter(characterId);
+
+  const description = character.description;
+  element = document.querySelector(".birthday-select");
+  element.style.display = "none";
+  test.innerHTML = description;
+}
+
+function getCharacter(characterId) {
   const findCharacterInObject = bb_signs_data.filter((bb_character) => {
     return bb_character.id === characterId;
   });
 
-  const description = findCharacterInObject[0].description;
-  element = document.querySelector(".birthday-select");
-  element.style.display = "none";
-  test.innerHTML = description;
+  return findCharacterInObject[0];
 }
 
 selectChar();
@@ -176,8 +175,16 @@ function close_zodiac() {
   element.style.display = "none";
 }
 
-function getSign(month, day, year) {
-  let yourSign;
+function getSign() {
+  let month;
+  let day;
+
+  const getBirthdayDate = document.getElementById("birthday-pick");
+  const getBirthdaySubmitButton = document.getElementById("submit-button");
+  getBirthdaySubmitButton.addEventListener("click", () => {
+    const birthdayDate = new Date(getBirthdayDate.value);
+    console.log(birthdayDate);
+  });
 
   if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
     astrological_sign = "mr-frond";
@@ -205,6 +212,6 @@ function getSign(month, day, year) {
   } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
     astrological_sign = "gayle";
   }
-
-  console.log("burger");
 }
+
+getSign();
