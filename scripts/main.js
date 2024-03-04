@@ -176,8 +176,6 @@ function close_zodiac() {
 }
 
 function getSign() {
-  let month;
-  let day;
   let astrological_sign;
 
   const getBirthdayDate = document.getElementById("birthday-pick");
@@ -185,8 +183,8 @@ function getSign() {
 
   getBirthdaySubmitButton.addEventListener("click", () => {
     const birthdayDate = new Date(getBirthdayDate.value);
-    const getMonth = birthdayDate.getUTCMonth() + 1;
-    const getDay = birthdayDate.getUTCDate();
+    const month = birthdayDate.getUTCMonth() + 1;
+    const day = birthdayDate.getUTCDate();
 
     if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
       astrological_sign = "mr-frond";
@@ -213,8 +211,8 @@ function getSign() {
     } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
       astrological_sign = "gayle";
     }
-    console.log(getMonth, getDay, birthdayDate, astrological_sign);
-    return astrological_sign;
+
+    console.log(astrological_sign);
   });
 }
 
