@@ -114,6 +114,7 @@ function selectChar() {
       const characterId = event.target.id || event.target.parentElement.id;
       getCharacterDescription(characterId);
       playCharacterAudio(characterId);
+      getCharacterImg(characterId);
       //getCharacterImg(characterId);
       // the last thing open the dialog;
       // const dialog = document.getElementById("display-bb");
@@ -142,6 +143,14 @@ function getCharacterDescription(characterId) {
   element = document.querySelector(".birthday-select");
   element.style.display = "none";
   test.innerHTML = description;
+}
+
+function getCharacterImg(characterId) {
+  const character = getCharacter(characterId);
+
+  const image = character.image;
+  const charPic = document.getElementById("showCharacterPic");
+  charPic.innerHTML = image;
 }
 
 function getCharacter(characterId) {
@@ -217,3 +226,5 @@ function getSign() {
 }
 
 getSign();
+
+function displaySign() {}
