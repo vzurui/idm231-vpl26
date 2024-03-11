@@ -88,7 +88,7 @@ dialog {
     border: 5px solid var(--red);
     background-color: var(--white);
     text-align: center;
-    margin: 5em 25em;
+    margin: -25em 25em 8em 25em;
     padding: 30px 20px;
 }
 
@@ -98,7 +98,7 @@ dialog {
     grid-template-columns: repeat(6, 1fr);
     gap: 30px 30px;
     justify-content: flex-start;
-    margin: -1em 15em;
+    margin: -2em 15em;
     text-align: center;
 }
 
@@ -143,6 +143,7 @@ dialog {
 }
 
 .display-bb {
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;

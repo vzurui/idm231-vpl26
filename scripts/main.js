@@ -1,5 +1,4 @@
-/* button data */
-
+// button data
 const bb_signs_data = [
   {
     id: "mr-frond",
@@ -7,7 +6,7 @@ const bb_signs_data = [
     sound: "Boing.mp3",
     image: "mr_frond.png",
     description:
-      "Capricorns, born between December 22 and January 19, are known for their ambition, discipline, and practicality. Mr. Frond from Bob's Burgers exhibits traits associated with Capricorns, such as dedication to his job, a hardworking nature, and a practical approach to problem-solving. His no-nonsense attitude and occasional struggle with expressing emotions align with the reserved and disciplined nature often attributed to Capricorns.",
+      "Capricorns, born between December 22 and January 19, are known for their ambition, discipline, and practicality. Mr. Frond from Bob's Burgers exhibits traits associated with Capricorns, such as dedication to his job, a hardworking nature, and a practical approach to problem-solving. Despite his uptight demeanor, Mr. Frond's underlying ambition is undeniable and has a high drive for success. He aspires to be more than just a school counselor, evidenced by his constant attempts to climb the administrative ladder, even if it means implementing some rather unorthodox methods. His no-nonsense attitude and occasional struggle with expressing emotions align with the reserved and disciplined nature often attributed to Capricorns. ",
   },
   {
     id: "tammy",
@@ -31,7 +30,7 @@ const bb_signs_data = [
     sound: "GuitarSmash.mp3",
     image: "louise.png",
     description:
-      "Aries individuals, born between March 21 and April 19, are known for their bold, energetic, and assertive nature. They have a natural leadership quality and are often fearless in pursuing their goals. Arians thrive on challenges and enjoy taking the initiative. In the context of Louise from Bob's Burgers, her character resonates strongly with Aries traits. Louise is fearless, always ready for an adventure, and possesses a sharp wit and assertiveness beyond her years. Her natural leadership skills and tendency to take charge, whether in planning a scheme or navigating family dynamics, mirror the bold and assertive characteristics commonly associated with Aries individuals.",
+      "Aries, born between March 21 and April 19, are known for their bold, energetic, and assertive nature. They have a natural leadership quality and are often fearless in pursuing their goals. Arians thrive on challenges and enjoy taking the initiative. Louise is fearless, always ready for an adventure, and possesses a sharp wit and assertiveness beyond her years. Her natural leadership skills and tendency to take charge, whether in planning a scheme or navigating family dynamics, mirror the bold and assertive characteristics commonly associated with Aries individuals. She can be surprisingly perceptive, picking up on unspoken emotions and manipulating situations to her advantage, albeit in her own unique way.",
   },
   {
     id: "jimmy-jr",
@@ -71,13 +70,13 @@ const bb_signs_data = [
     sound: "Splat.mp3",
     image: "rudy.png",
     description:
-      "Cancer individuals, born between June 21 and July 22, are known for their nurturing, empathetic, and loyal nature. They often prioritize emotional connections and seek a sense of security and comfort in their relationships. Cancers are intuitive and sensitive, attuned to the feelings of those around them. In the case of Rudy from Bob's Burgers, he reflects some Cancer traits through his caring and loyal friendship with the Belcher kids. Rudy's sensitivity to others' emotions, his genuine concern for his friends, and his willingness to provide support align with the nurturing and empathetic qualities commonly associated with Cancer individuals. Despite his occasional quirkiness, Rudy's loyalty and emotional awareness contribute to his character's Cancer-like charm.",
+      "Cancer individuals, born between June 21 and July 22, are known for their nurturing, empathetic, and loyal nature. They often prioritize emotional connections and seek a sense of security and comfort in their relationships. Cancers are intuitive and sensitive, attuned to the feelings of those around them. Rudy reflects Cancer traits through his caring and loyal friendship with the Belcher kids. Rudy's sensitivity to others' emotions, his genuine concern for his friends, and his willingness to provide support align with the nurturing and empathetic qualities commonly associated with Cancers. Despite his occasional quirkiness, Rudy's loyalty and emotional awareness contribute to his character's Cancer-like charm.",
   },
   {
     id: "tina",
     name: "Tina",
     sound: "Wink.mp3",
-    image: "tina.png",
+    image: "Tina_Belcher.png",
     description:
       "Libras, born between September 23 and October 22, are known for their social grace, charm, and a natural sense of harmony. They often value relationships, seeking to create connections and avoid conflicts. Libras are known for their fairness and ability to see multiple perspectives. In the context of Tina from Bob's Burgers, she exhibits some Libra traits. Tina's social awkwardness, coupled with her genuine desire for fairness and her attempts to navigate relationships with charm, resonate with the Libran inclination for harmony and diplomacy. While her approach may be unique, Tina's underlying qualities align with the sociable and balanced nature often associated with Libras.",
   },
@@ -95,32 +94,33 @@ const bb_signs_data = [
     sound: "Zoop.mp3",
     image: "gene.png",
     description:
-      "Sagittarians, born between November 22 and December 21, are characterized by their adventurous, optimistic, and free-spirited nature. They have a love for exploration, value independence, and approach life with a sense of humor. Sagittarians are known for their straightforward and honest communication. In the context of Gene from Bob's Burgers, he embodies many Sagittarius traits. Gene's adventurous and often eccentric pursuits, such as his musical endeavors and quirky interests, align with the free-spirited and optimistic characteristics associated with Sagittarians. His sense of humor, combined with a straightforward and genuine approach to life, reflects the Sagittarian love for authenticity and a lighthearted perspective.",
+      "Sagittarians, born between November 22 and December 21, are characterized by their adventurous, optimistic, and free-spirited nature. They have a love for exploration, value independence, and approach life with a sense of humor. Sagittarians are known for their straightforward and honest communication. In the context of Gene, he embodies many Sagittarius traits. Gene's adventurous and often eccentric pursuits, such as his musical endeavors and quirky interests, align with the free-spirited and optimistic characteristics associated with Sagittarians. His sense of humor, combined with a straightforward and genuine approach to life, reflects the Sagittarian love for authenticity and a lighthearted perspective.",
   },
 ];
 
-/* select character, description & sound play/pop up */
+// select character, description & sound play will pop up
 function selectChar() {
   // bb_signs_data.forEach(({ id }) => { return id // character.id } ))
   bb_signs_data.forEach((character) => {
     const id = character.id;
     const characterButton = document.getElementById(id);
 
-    // click event, but MANY things will happen here
     characterButton.addEventListener("click", (event) => {
       const characterId = event.target.id || event.target.parentElement.id;
+
+      document.querySelector(".display-bb").style.visibility = "visible";
+
       getCharacterDescription(characterId);
       playCharacterAudio(characterId);
       getCharacterImg(characterId);
       // the last thing open the dialog;
-      // const dialog = document.getElementById("display-bb");
-      // dialog.showModal();
+      // const bbPopUp = document.querySelector(".display-bb");
+      // bbPopUp.showModal();
     });
   });
 }
 
-/* audio sounds */
-
+// audio sounds
 function playCharacterAudio(characterId) {
   const character = getCharacter(characterId);
 
@@ -138,18 +138,21 @@ function playCharacterAudio(characterId) {
   audioElement.play();
 }
 
-/* grabs character description */
-
+// grabs character description
 function getCharacterDescription(characterId) {
   const character = getCharacter(characterId);
   const charEntry = document.getElementById("charEntry");
 
   const description = character.description;
   const element = document.querySelector(".birthday-select");
-  element.style.display = "none";
+  element.style.visibility = "hidden";
+
+  closeChar.style.visibility = "visible";
+
   charEntry.innerHTML = description;
 }
 
+// grabs character image
 function getCharacterImg(characterId) {
   const character = getCharacter(characterId);
 
@@ -158,6 +161,7 @@ function getCharacterImg(characterId) {
   charPic.setAttribute("src", `images/${image}`);
 }
 
+// grabs characters from array
 function getCharacter(characterId) {
   const findCharacterInObject = bb_signs_data.filter((bb_character) => {
     return bb_character.id === characterId;
@@ -168,27 +172,57 @@ function getCharacter(characterId) {
 
 selectChar();
 
-/* help button */
+// help button open and close
+function closeHelp() {
+  const helpBox = document.querySelector(".helpBox");
+  const showButton = document.getElementById("burger-button");
+  const closeButton = document.querySelector(".close");
 
-const dialog = document.querySelector(".dialog");
-const showButton = document.getElementById("burger-button");
-const closeButton = document.querySelector(".close");
+  showButton.addEventListener("click", () => {
+    helpBox.showModal();
+  });
 
-showButton.addEventListener("click", () => {
-  dialog.showModal();
-});
+  closeButton.addEventListener("click", () => {
+    helpBox.close();
+  });
+}
 
-closeButton.addEventListener("click", () => {
-  dialog.close();
-});
+closeHelp();
 
-/* clears zodiac from screen */
+const closeChar = document.querySelector(".display-bb");
+closeChar.style.visibility = "hidden";
+
+// clears zodiac from screen
+
+function closeOverlay() {
+  const closeOverlayButton = document.querySelector(".bbClose");
+
+  closeOverlayButton.addEventListener("click", () => {
+    document.querySelector(".display-bb").style.visibility = "hidden";
+    document.querySelector(".birthday-select").style.visibility = "visible";
+  });
+}
+
+closeOverlay();
+
+// const bbShow = document.querySelector(".bbShow");
+// const bdayShow = document.getElementById("bdayShow");
+// const byeBday = document.querySelector(".byeBday");
+
+// bdayShow.addEventListener("click", () => {
+//   bbShow.showModal();
+// });
+
+// byeBday.addEventListener("click", () => {
+//   bbShow.close();
+// });
 
 // function close_zodiac() {
 //   element = document.querySelector(".birthday-select");
 //   element.style.display = "none";
 // }
 
+// grabs date input and inserts corresponding sign
 function getSign() {
   let astrological_sign;
   const getBirthdayDate = document.getElementById("birthday-pick");
