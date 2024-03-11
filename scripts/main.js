@@ -1,4 +1,4 @@
-// button data
+// buttons data
 const bb_signs_data = [
   {
     id: "mr-frond",
@@ -100,7 +100,6 @@ const bb_signs_data = [
 
 // select character, description & sound play will pop up
 function selectChar() {
-  // bb_signs_data.forEach(({ id }) => { return id // character.id } ))
   bb_signs_data.forEach((character) => {
     const id = character.id;
     const characterButton = document.getElementById(id);
@@ -113,9 +112,6 @@ function selectChar() {
       getCharacterDescription(characterId);
       playCharacterAudio(characterId);
       getCharacterImg(characterId);
-      // the last thing open the dialog;
-      // const bbPopUp = document.querySelector(".display-bb");
-      // bbPopUp.showModal();
     });
   });
 }
@@ -126,15 +122,7 @@ function playCharacterAudio(characterId) {
 
   const sound = character.sound;
   const audioElement = document.getElementById("audio_player");
-  audioElement.setAttribute("src", `sounds/${sound}`); //template literals
-  // <audio src="sounds/Boink.mp3">
-  //     <div>src=""</div>
-  // <audio>
-
-  // <img id="myImg" src="" />
-  // imageElement
-  // imageElement.setAttribute("src", `images/${image}`);
-  // <img src="images/teddy.png" id="myImg" />
+  audioElement.setAttribute("src", `sounds/${sound}`);
   audioElement.play();
 }
 
@@ -205,23 +193,6 @@ function closeOverlay() {
 
 closeOverlay();
 
-// const bbShow = document.querySelector(".bbShow");
-// const bdayShow = document.getElementById("bdayShow");
-// const byeBday = document.querySelector(".byeBday");
-
-// bdayShow.addEventListener("click", () => {
-//   bbShow.showModal();
-// });
-
-// byeBday.addEventListener("click", () => {
-//   bbShow.close();
-// });
-
-// function close_zodiac() {
-//   element = document.querySelector(".birthday-select");
-//   element.style.display = "none";
-// }
-
 // grabs date input and inserts corresponding sign
 function getSign() {
   let astrological_sign;
@@ -265,7 +236,7 @@ function getSign() {
       getCharacterImg(astrological_sign);
       getBirthdayDate.value = "";
     } else {
-      console.log("YOU ARE MISSING SOMETHING VY");
+      console.log("missing sign");
     }
   });
 }
