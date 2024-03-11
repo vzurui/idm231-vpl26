@@ -88,7 +88,7 @@ dialog {
     border: 5px solid var(--red);
     background-color: var(--white);
     text-align: center;
-    margin: -25em 25em 8em 25em;
+    margin: 8rem 25rem;
     padding: 30px 20px;
 }
 
@@ -111,6 +111,7 @@ dialog {
     font-size: 22px;
     text-align: center;
     line-height: 140%;
+    margin: 0;
     width: 50px;
     animation: colorChange 8s linear infinite;
 }
@@ -140,14 +141,16 @@ dialog {
 .display-bb img {
     height: 300px;
     width: auto;
+    justify-content: center;
 }
 
 .display-bb {
-    height: auto;
+    height: 400px;
+    width: auto;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 7em 12em;
+    margin: 7em 10em;
+    padding: 0 90px;
 }
 
 .help-button {
@@ -162,10 +165,24 @@ dialog {
     margin: 0 1em;
 }
 
+.bb-side-contents {
+    background-color: green;
+    justify-content: center;
+}
+
 button.close {
     border: 3px solid var(--red);
     background-color: var(--yellow);
     padding: 15px;
+}
+
+button.bbClose { /* close button for descriptions */
+    background-color: var(--yellow);
+    border: 3px solid var(--red);
+    padding: 13px;
+    margin-left: 0.5em;
+    display: grid;
+    grid-template-rows: 1fr;
 }
 
 #burger-button {
@@ -191,14 +208,4 @@ button.close {
     padding: 10px;
 }
 
-/* #showCharacterPic {
-    background-color: red;
-} */
 
-.hidden {
-    display: none;
-}
-
-.visible {
-    display: block;
-}

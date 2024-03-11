@@ -108,7 +108,7 @@ function selectChar() {
     characterButton.addEventListener("click", (event) => {
       const characterId = event.target.id || event.target.parentElement.id;
 
-      document.querySelector(".display-bb").style.visibility = "visible";
+      document.querySelector(".display-bb").style.display = "flex";
 
       getCharacterDescription(characterId);
       playCharacterAudio(characterId);
@@ -145,9 +145,9 @@ function getCharacterDescription(characterId) {
 
   const description = character.description;
   const element = document.querySelector(".birthday-select");
-  element.style.visibility = "hidden";
+  element.style.display = "none";
 
-  closeChar.style.visibility = "visible";
+  closeChar.style.display = "flex";
 
   charEntry.innerHTML = description;
 }
@@ -190,7 +190,7 @@ function closeHelp() {
 closeHelp();
 
 const closeChar = document.querySelector(".display-bb");
-closeChar.style.visibility = "hidden";
+closeChar.style.display = "none";
 
 // clears zodiac from screen
 
@@ -198,8 +198,8 @@ function closeOverlay() {
   const closeOverlayButton = document.querySelector(".bbClose");
 
   closeOverlayButton.addEventListener("click", () => {
-    document.querySelector(".display-bb").style.visibility = "hidden";
-    document.querySelector(".birthday-select").style.visibility = "visible";
+    document.querySelector(".display-bb").style.display = "none";
+    document.querySelector(".birthday-select").style.display = "block";
   });
 }
 
@@ -259,9 +259,14 @@ function getSign() {
       astrological_sign = "gayle";
     }
 
-    getCharacterDescription(astrological_sign);
-    playCharacterAudio(astrological_sign);
-    getCharacterImg(astrological_sign);
+    if (astrological_sign) {
+      getCharacterDescription(astrological_sign);
+      playCharacterAudio(astrological_sign);
+      getCharacterImg(astrological_sign);
+      getBirthdayDate.value = "";
+    } else {
+      console.log("YOU ARE MISSING SOMETHING VY");
+    }
   });
 }
 
