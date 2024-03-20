@@ -30,7 +30,7 @@ const bb_signs_data = [
     sound: "GuitarSmash.mp3",
     image: "louise.png",
     description:
-      "Aries, born between March 21 and April 19, are known for their bold, energetic, and assertive nature. They have a natural leadership quality and are often fearless in pursuing their goals. Arians thrive on challenges and enjoy taking the initiative. Louise is fearless, always ready for an adventure, and possesses a sharp wit and assertiveness beyond her years. Her natural leadership skills and tendency to take charge, whether in planning a scheme or navigating family dynamics, mirror the bold and assertive characteristics commonly associated with Aries individuals. She can be surprisingly perceptive, picking up on unspoken emotions and manipulating situations to her advantage, albeit in her own unique way.",
+      "Aries, born between March 21 and April 19, are known for their bold, energetic, and assertive nature. They have a natural leadership quality and are often fearless in pursuing their goals. Aries thrive on challenges and enjoy taking the initiative. Louise is fearless, always ready for an adventure, and possesses a sharp wit and assertiveness beyond her years. Her natural leadership skills and tendency to take charge, whether in planning a scheme or navigating family dynamics, mirror the bold and assertive characteristics commonly associated with Aries individuals. She can be surprisingly perceptive, picking up on unspoken emotions and manipulating situations to her advantage, albeit in her own unique way.",
   },
   {
     id: "jimmy-jr",
