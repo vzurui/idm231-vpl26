@@ -181,7 +181,6 @@ const closeChar = document.querySelector(".display-bb");
 closeChar.style.display = "none";
 
 // clears zodiac from screen
-
 function closeOverlay() {
   const closeOverlayButton = document.querySelector(".bbClose");
 
@@ -242,16 +241,3 @@ function getSign() {
 }
 
 getSign();
-
-function addDialogEventListeners() {
-  // add your logic for the close button and also pop up
-  // add another birthday-select button listener DIALOG OPEN
-}
-
-// function main() {
-//   getSign();
-//   selectChar();
-//   addDialogEventListeners();
-// }
-
-// main();
